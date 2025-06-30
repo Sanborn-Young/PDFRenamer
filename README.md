@@ -1,4 +1,72 @@
-# PDFRenamer
-Sanborn-Young/PDFRenamer
+## PDFRenamer
 
-#### A chrome extension to help with downloading Pdfs
+A chrome extension that should allow you to more easily download and rename PDF files.
+
+#### How to use
+
+This is set up as a developer Chrome extension. What this means is you need to download the content of this github into a subdirectory. This subdirectory can have any name but an example would be C:\extensions\PDFRenamer.
+
+**How to Install a Developer Chrome Extension (Unpacked Extension)**
+
+1. **Prepare the Extension Files**
+   - Make sure you have the extension files in a folder. as written about above, where I give the example\PDFRenamer.
+  
+2. **Open the Extensions Page in Chrome**
+   - Open Google Chrome.
+   - In the address bar, type:  
+     `chrome://extensions`  
+     and press Enter.
+
+3. **Enable Developer Mode**
+   - At the top right of the Extensions page, turn on the toggle for **Developer mode**.
+
+4. **Load the Unpacked Extension**
+   - Click the **Load unpacked** button (usually at the top left).
+   - In the dialog that appears, navigate to the folder where your extension files are located.
+   - Select the folder and click **Select Folder**.
+
+5. **Verify Installation**
+   - The extension should now appear in your list of extensions.
+   - The extension has an icon, so it will also appear in your Chrome toolbar. Pin it for easy access by clicking the puzzle piece icon and then the pin next to your extension.
+
+6. **Using the Extension**
+   - Click the extension’s icon in the toolbar to use it, or follow any instructions you provide for its features.
+
+7. **Updating the Extension**
+   - If you make changes to the extension’s files, return to the `chrome://extensions` page and click the **refresh** icon (⟳) next to your extension to reload it.
+
+**Note:**  
+- The extension will only work as long as the files remain in the folder you selected. Don’t move or delete the folder unless you want to remove the extension.
+- You may see a warning about developer mode; this is normal for unpacked extensions. You normally need to do something like reauthorized developer extensions every two weeks.
+
+#### How to use once installed
+
+Open up any PDF inside of Chrome. Many times if a website has APDF, if you click on it it will open it up inside of a tab. This is where you want to do all of your work.
+
+Now you want to select a name for this PDF. Look at your document and highlight any section that you think would be a good name for this file. This name will be inserted into a dialog box for your approval before downloading and saving the file.
+
+Now select the extension icon that you pinned to your browser bar.  You will get a dialog box that gives you the following options.
+
+| Setting                                | Value / Description                                |
+|----------------------------------------|----------------------------------------------------|
+| Auto Rename PDFs                       | ✅ Enabled                                         |
+| Use Clipboard Content in Filename      | ✅ Enabled                                         |
+| Use Date in Filename                   | ✅ Enabled                                         |
+| Date Format                            | YYMMDD                                             |
+| Filename Preview                       | 250629_clipboard-content_perplexity.pdf            |
+| Buttons                                | - Capture Clipboard for Next PDF                  |
+|                                        | - Download Current Tab Clipboard Name             |
+|                                        | - Save Settings                                   |
+
+As long as the extension is enabled, the only button that you'll use is the bottom one. This button tells you that it is going to save the current tab using information that is from the current tab, and using whatever section you copied onto your windows clipboard.
+
+#### What goes into the file names
+
+The first digits of the file name will be the year month and day. You can change the exact date during the final step when you save the file. However you do get a default of the current date in the save dialog box.
+
+The second element in the file name is whatever is currently in your windows clipboard. If you highlighted a good word or two, this allows you to quickly put the subject of the PDF into the file name.
+
+The third element is placing part of the website that you downloaded the pdf from as the final part of the file name. For example, if you were downloading a document from www.etrade.com, it would append etrade as the final item in your file name.
+
+There is a special file in the subdirectory that holds all the parts of the extension called domain_map.csv.  If you open this file with the text editor you can make a translation table to turn a web address into another word of your choosing. For example, if you are downloading from Etrade, you may be downloading a financial document from Morgan Stanley. In the csv file, if you place Etrade, MS on a single line, before saving it will turn the normal Etrade file name into MS. Just make sure to have a single line for each translation, with the first word being the target for the translation, and the second word being what it will be transformed to.
+

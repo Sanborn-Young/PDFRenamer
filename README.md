@@ -60,6 +60,10 @@ Now select the extension icon that you pinned to your browser bar.  You will get
 
 As long as the extension is enabled, the only button that you'll use is the bottom one "Download Current Tab Clipboard Name". This button tells you that it is going to save the current tab using information that is from the current tab, and using whatever section you copied onto your windows clipboard.
 
+The other buttons really don't need to be used. The save button will save the format of the year according to whatever the pull down box says. The other button to capture something off the clipboard is only if you determine that you want to save using the chrome download button that is actually on the pdf. As long as you have the extension icon up and easy to get to it makes more sense to simply use the lowest button, which both uses the clipboard to rename the file and also download the file.
+
+But as mentioned above, you will get the option to update the final file name in the final file save dialog box.
+
 #### What goes into the file names
 
 The first digits of the file name will be the year month and day. You can change the exact date during the final step when you save the file. However you do get a default of the current date in the save dialog box.

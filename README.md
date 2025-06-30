@@ -41,9 +41,13 @@ This is set up as a developer Chrome extension. What this means is you need to d
 
 #### How to use once installed
 
+This extension will create a File name that will give you three bits of information that should allow you to quickly identify what is inside of the pdf. The key elements I have selected is an easy to sort date, using whatever is inside of your windows 11 clipboard buffer as a second element, and then finally appending whatever sub domain is showing on the web browser as the final part of the file name.
+
 Open up any PDF inside of Chrome. Many times if a website has a PDF, if you click on it it will open it up inside of a tab. This is where you want to do all of your work.
 
-Now you want to select a name for this PDF. Look at your document and highlight any section that you think would be a good name for this file. This name will be inserted into a dialog box for your approval before downloading and saving the file.  For example, I have a tendency to download a lot of reports on various companies, almost always the report starts off with the title, which turns out to be a good name for the file.
+Now you want to select a name for this PDF. Look at your document and highlight any section that you think would be a good name for this file. So now this is the one thing you'll need to absorb as concept. Once this is highlighted, you need to copy this into your Windows clipboard buffer. You can do this by pressing the right mouse button, and selecting copy. Or simply pressing control plus C on your keyboard. The extension will use what is ever inside of your windows clipboard buffer as the second element in your file name. 
+
+By the way, this name will be inserted into a dialog box for your approval before downloading and saving the file.  For example, I have a tendency to download a lot of reports on various companies, almost always the report starts off with the title, which turns out to be a good name for the file.
 
 Now select the extension icon that you pinned to your browser bar.  You will get a dialog box that gives you the following options.
 

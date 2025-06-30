@@ -1,0 +1,77 @@
+body {
+  width: 300px;
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0 0 16px 0;
+  color: #333;
+  text-align: center;
+}
+
+h3 {
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.setting {
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#preview {
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #666;
+  word-break: break-all;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #3367d6;
+}

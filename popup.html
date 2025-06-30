@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>PDF Auto-Renamer</h1>
+    
+    <div class="section">
+      <h3>Settings</h3>
+      
+      <div class="setting">
+        <label>
+          <input type="checkbox" id="enableExtension" checked>
+          Enable automatic PDF renaming
+        </label>
+      </div>
+
+      <!-- Clipboard capture button and status -->
+      <div class="setting">
+        <button id="fetchClipboard">Capture Clipboard for Next PDF</button>
+        <span id="clipboardStatus" style="margin-left:8px;color:green;"></span>
+      </div>
+      
+      <div class="setting">
+        <label for="dateFormat">Date Format:</label>
+        <select id="dateFormat">
+          <option value="YYMMDD">YYMMDD (251229)</option>
+          <option value="YYYYMMDD">YYYYMMDD (20251229)</option>
+          <option value="MMDDYY">MMDDYY (122925)</option>
+        </select>
+      </div>
+      
+      <div class="setting">
+        <label>
+          <input type="checkbox" id="useClipboard" checked>
+          Use clipboard content in filename
+        </label>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h3>Preview</h3>
+      <div id="preview">251229_clipboard-content WEBSITE.pdf</div>
+    </div>
+    
+    <div class="section">
+      <button id="saveSettings">Save Settings</button>
+    </div>
+    
+    <div class="section">
+      <button id="downloadActiveTab">Download Current Tab Clipboard Name</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

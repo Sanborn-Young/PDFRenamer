@@ -30,7 +30,7 @@ This is set up as a developer Chrome extension. What this means is you need to d
    - The extension has an icon, so it will also appear in your Chrome toolbar. Pin it for easy access by clicking the puzzle piece icon and then the pin next to your extension.
 
 6. **Using the Extension**
-   - Click the extension’s icon in the toolbar to use it, or follow any instructions you provide for its features.
+   - Click the extension’s icon in the toolbar to use it.  This will bring up a dialog box for you to save the PDF, and it is the easiest way for you to use the extension.
 
 7. **Updating the Extension**
    - If you make changes to the extension’s files, return to the `chrome://extensions` page and click the **refresh** icon (⟳) next to your extension to reload it.
@@ -41,9 +41,9 @@ This is set up as a developer Chrome extension. What this means is you need to d
 
 #### How to use once installed
 
-Open up any PDF inside of Chrome. Many times if a website has APDF, if you click on it it will open it up inside of a tab. This is where you want to do all of your work.
+Open up any PDF inside of Chrome. Many times if a website has a PDF, if you click on it it will open it up inside of a tab. This is where you want to do all of your work.
 
-Now you want to select a name for this PDF. Look at your document and highlight any section that you think would be a good name for this file. This name will be inserted into a dialog box for your approval before downloading and saving the file.
+Now you want to select a name for this PDF. Look at your document and highlight any section that you think would be a good name for this file. This name will be inserted into a dialog box for your approval before downloading and saving the file.  For example, I have a tendency to download a lot of reports on various companies, almost always the report starts off with the title, which turns out to be a good name for the file.
 
 Now select the extension icon that you pinned to your browser bar.  You will get a dialog box that gives you the following options.
 
@@ -53,12 +53,12 @@ Now select the extension icon that you pinned to your browser bar.  You will get
 | Use Clipboard Content in Filename      | ✅ Enabled                                         |
 | Use Date in Filename                   | ✅ Enabled                                         |
 | Date Format                            | YYMMDD                                             |
-| Filename Preview                       | 250629_clipboard-content_perplexity.pdf            |
+| Filename Preview                       | 250629_clipboard-content_ Web sub domain.pdf            |
 | Buttons                                | - Capture Clipboard for Next PDF                  |
-|                                        | - Download Current Tab Clipboard Name             |
-|                                        | - Save Settings                                   |
+|                                        | - Save Settings             |
+|                                        | - Download Current Tab Clipboard Name                                   |
 
-As long as the extension is enabled, the only button that you'll use is the bottom one. This button tells you that it is going to save the current tab using information that is from the current tab, and using whatever section you copied onto your windows clipboard.
+As long as the extension is enabled, the only button that you'll use is the bottom one "Download Current Tab Clipboard Name". This button tells you that it is going to save the current tab using information that is from the current tab, and using whatever section you copied onto your windows clipboard.
 
 #### What goes into the file names
 
@@ -68,5 +68,5 @@ The second element in the file name is whatever is currently in your windows cli
 
 The third element is placing part of the website that you downloaded the pdf from as the final part of the file name. For example, if you were downloading a document from www.etrade.com, it would append etrade as the final item in your file name.
 
-There is a special file in the subdirectory that holds all the parts of the extension called domain_map.csv.  If you open this file with the text editor you can make a translation table to turn a web address into another word of your choosing. For example, if you are downloading from Etrade, you may be downloading a financial document from Morgan Stanley. In the csv file, if you place Etrade, MS on a single line, before saving it will turn the normal Etrade file name into MS. Just make sure to have a single line for each translation, with the first word being the target for the translation, and the second word being what it will be transformed to.
+There is a special file in the subdirectory that holds all the parts of the extension called domain_map.csv.  If you open this file with the text editor you can make a translation table to turn a web address into another word of your choosing. For example, if you are downloading from Etrade, you may be downloading a financial document from Morgan Stanley. In the csv file, if you place "Etrade, MS" on a single line, before saving it will turn the normal Etrade file name into MS. Just make sure to have a single line for each translation, with the first word being the target for the translation, and the second word being what it will be transformed to.
 

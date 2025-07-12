@@ -41,7 +41,7 @@ This is set up as a developer Chrome extension. What this means is you need to d
 
 #### How to use once installed
 
-This extension will create a File name that will give you three bits of information that should allow you to quickly identify what is inside of the pdf. The key elements I have selected is an easy to sort date, using whatever is inside of your windows 11 clipboard buffer as a second element, and then finally appending whatever sub domain is showing on the web browser as the final part of the file name.
+This extension will create a File name that will give you three chunks of information that should allow you to quickly identify what is inside of the pdf. The key elements I have selected is an easy to sort date, using whatever is inside of your windows 11 clipboard buffer as a second element, and then finally appending whatever sub domain is showing on the web browser as the final part of the file name.
 
 Open up any PDF inside of Chrome. Many times if a website has a PDF, if you click on it it will open it up inside of a tab. This is where you want to do all of your work.
 
@@ -62,9 +62,13 @@ Now select the extension icon that you pinned to your browser bar.  You will get
 |                                        | - Save Settings             |
 |                                        | - Download Current Tab Clipboard Name                                   |
 
-As long as the extension is enabled, the only button that you'll use is the bottom one "Download Current Tab Clipboard Name". This button tells you that it is going to save the current tab using information that is from the current tab, and using whatever section you copied onto your windows clipboard.
+The main button you will probably use in most circumstances is the bottom one "Download Current Tab Clipboard Name". This button tells you that it is going to save the current tab using information that is from the current tab, and using whatever section you copied onto your windows clipboard.
 
-The other buttons really don't need to be used. The save button will save the format of the year according to whatever the pull down box says. The other button to capture something off the clipboard is only if you determine that you want to save using the chrome download button that is actually on the pdf. As long as you have the extension icon up and easy to get to it makes more sense to simply use the lowest button, which both uses the clipboard to rename the file and also download the file.
+The other buttons really don't need to be used Unless you have a problem with the bottom button or unless you wanna turn off the extension. 
+
+The save button will save the format of the year according to whatever the pull down box says. The other button to capture something off the clipboard is only if you determine that you want to save using the chrome download button that is actually on the pdf. As long as you have the extension icon up and easy to get to it makes more sense to simply use the lowest button, which both uses the clipboard to rename the file and also download the file.
+
+As mentioned before, from a practical standpoint you should have this extension pin to your browser bar. If you do it in this fashion, it will allow you to click on the icon, uncheck the box which makes it active. And then you can save this state so it no longer will rename files. This way you don't need to go into the extension detail box to turn the extension on and off. You'll do it from your browser bar.
 
 But as mentioned above, you will get the option to update the final file name in the final file save dialog box.
 
@@ -78,3 +82,6 @@ The third element is placing part of the website that you downloaded the pdf fro
 
 There is a special file in the subdirectory that holds all the parts of the extension called domain_map.csv.  If you open this file with the text editor you can make a translation table to turn a web address into another word of your choosing. For example, if you are downloading from Etrade, you may be downloading a financial document from Morgan Stanley. In the csv file, if you place "Etrade, MS" on a single line, before saving it will turn the normal Etrade file name into MS. Just make sure to have a single line for each translation, with the first word being the target for the translation, and the second word being what it will be transformed to.
 
+#### Fixes
+
+Note original version push to get hub had an issue where the pull down box for the extension had a non operational checkbox that would not turn off the extension when checked and saved. This has been fixed with the version here.

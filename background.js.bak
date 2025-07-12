@@ -22,21 +22,17 @@ loadDomainTranslationMap();
 
 // --- Main download renaming logic ---
 chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, suggest) {
-  chrome.storage.sync.get({ enabled: true }, function(items) {
-    if (items.enabled) {
-      // Only process PDF files
-      if (downloadItem.filename.toLowerCase().endsWith('.pdf')) {
-        console.log('PDF detected:', downloadItem.filename);
+  // Only process PDF files
+  if (downloadItem.filename.toLowerCase().endsWith('.pdf')) {
+    console.log('PDF detected:', downloadItem.filename);
 
-        // Handle asynchronously to read clipboard from storage
-        handlePDFRename(downloadItem, suggest);
-        return true; // Indicates we're handling this asynchronously
-      }
-    }
-    // For non-PDF files or if disabled, use original filename
-    suggest({ filename: downloadItem.filename });
-  });
-  return true; // Required for async suggestion
+    // Handle asynchronously to read clipboard from storage
+    handlePDFRename(downloadItem, suggest);
+    return true; // Indicates we're handling this asynchronously
+  }
+
+  // For non-PDF files, use original filename
+  suggest({ filename: downloadItem.filename });
 });
 
 async function handlePDFRename(downloadItem, suggest) {

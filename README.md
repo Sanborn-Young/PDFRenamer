@@ -1,6 +1,6 @@
 ## PDFRenamer
 
-A chrome extension that should allow you to more easily download and rename PDF files.
+A chrome extension that should allow you to more easily download and rename PDF files From selected sell side financial institutions.  This can probably be used with other websites, where you want to download PDF.  However it is primarily aimed at being able to download financial sell side Reports to a local client directory utilizing Chromium based browsers.
 
 #### How to use
 
@@ -43,34 +43,17 @@ This is set up as a developer Chrome extension. What this means is you need to d
 
 This extension will create a File name that will give you three chunks of information that should allow you to quickly identify what is inside of the pdf. The key elements I have selected is an easy to sort date, using whatever is inside of your windows 11 clipboard buffer as a second element, and then finally appending whatever sub domain is showing on the web browser as the final part of the file name.
 
-Open up any PDF inside of Chrome. Many times if a website has a PDF, if you click on it it will open it up inside of a tab. This is where you want to do all of your work.
+Once the extension has been loaded you can pin the extension to your chrome browser bar which is highly suggested. If you open up the extension you will see a list of different boxes that will allow you to set the default for whatever PDF you are going to download. Because this extension is aggressive and will take over every PDF download, the browser is set up so that you need to toggle it on and it is active for the next 60 minutes. That way if you walk away from your PC the next time you download a PDF it won't continue to be renamed. you can obviously turn off the extension by untoggling the extension.
 
-Now you want to select a name for this PDF. Look at your document and highlight any section that you think would be a good name for this file. So now this is the one thing you'll need to absorb as concept. Once this is highlighted, you need to copy this into your Windows clipboard buffer. You can do this by pressing the right mouse button, and selecting copy. Or simply pressing control plus C on your keyboard. The extension will use what is ever inside of your windows clipboard buffer as the second element in your file name. 
+If you are going to use this extension you only get two options for the date. I am a firm believer in that sorting files should always be done by the year first then the month then the day which allows you to quickly find any file in Windows 11 by simply sorting up or down without the confusion of one day not necessarily following the next. I allow you to put in both 8 digit numbers and six digit numbers, but I believe the 6 digit is superior for most applications.
 
-By the way, this name will be inserted into a dialog box for your approval before downloading and saving the file.  For example, I have a tendency to download a lot of reports on various companies, almost always the report starts off with the title, which turns out to be a good name for the file.
+Let's discuss websites where PDFS are used. Generally there are two methodologies by which websites present PDFS to you. The first methodology is easiest to work with this extension. You click on the PDF button in whatever website you are on and the website temporarily loads the PDF into a new window without downloading it onto your PC. An example of this would be the research provided at E trade by Morgan Stanley. In this scenario if you elect to see a research report as a PDF, it now displays inside of a new tab. At this point you can utilize the drop down menu from your extension to set the date That the domain which will translate into the person that did the sell side analysis is all put into one file name.
 
-Now select the extension icon that you pinned to your browser bar.  You will get a dialog box that gives you the following options.
+A real advantage of this extension is allowing you to highlight anything on the PDF and utilize this as your file name. Times this is a much better title than any default file name that the website provider may elect to give to you. It actually does not keep their name, and if you wanted to simply download as per their name then you would simply disable the extension.
 
-| Setting                                | Value / Description                                |
-|----------------------------------------|----------------------------------------------------|
-| Auto Rename PDFs                       | ✅ Enabled                                         |
-| Use Clipboard Content in Filename      | ✅ Enabled                                         |
-| Use Date in Filename                   | ✅ Enabled                                         |
-| Date Format                            | YYMMDD                                             |
-| Filename Preview                       | 250629_clipboard-content_ Web sub domain.pdf            |
-| Buttons                                | - Capture Clipboard for Next PDF                  |
-|                                        | - Save Settings             |
-|                                        | - Download Current Tab Clipboard Name                                   |
+Different websites will have different providers of sell side material. For example E trade research is done by Morgan Stanley. Therefore inside of your chrome extension folder you will find a CSV file which allows you to map domains to providers. For the most part this works well but in some instance the translation will fail. If the translation fails you can always elect to change the name in the drop down box and commit it to the final file name.
 
-The main button you will probably use in most circumstances is the bottom one "Download Current Tab Clipboard Name". This button tells you that it is going to save the current tab using information that is from the current tab, and using whatever section you copied onto your windows clipboard.
-
-The other buttons really don't need to be used Unless you have a problem with the bottom button or unless you wanna turn off the extension. 
-
-The save button will save the format of the year according to whatever the pull down box says. The other button to capture something off the clipboard is only if you determine that you want to save using the chrome download button that is actually on the pdf. As long as you have the extension icon up and easy to get to it makes more sense to simply use the lowest button, which both uses the clipboard to rename the file and also download the file.
-
-As mentioned before, from a practical standpoint you should have this extension pin to your browser bar. If you do it in this fashion, it will allow you to click on the icon, uncheck the box which makes it active. And then you can save this state so it no longer will rename files. This way you don't need to go into the extension detail box to turn the extension on and off. You'll do it from your browser bar.
-
-But as mentioned above, you will get the option to update the final file name in the final file save dialog box.
+In some instances a website will elect to not open up the PDF inside of a new tab but immediately decide to download the PDF to your local machine. The tab will also work in this particular case but you must pre populate all the fields in the drop down tab before you download. In all circumstances when the file is being downloaded it will look at the last thing that you copied into your user clipboard. In the instance where you are forced to download directly to your PC and this extension intercepts the download, if you have your desired file name inside of your clipboard buffer It will utilize this for the file name that it's using to download. So you could elect to copy something on the page and utilize that for download even though it doesn't show up in a window. Also as long as the extension is enabled you can always set the date with the extension drop down. So you may want to SA save this or alternatively if you have saved as enabled you can rename the file before it is downloaded.
 
 #### What goes into the file names
 
@@ -84,4 +67,4 @@ There is a special file in the subdirectory that holds all the parts of the exte
 
 #### Fixes
 
-Note original version push to get hub had an issue where the pull down box for the extension had a non operational checkbox that would not turn off the extension when checked and saved. This has been fixed with the version here.
+Version 1.0.2 had massive changes to the UI and is so different than previous versions that it should almost be considered a standalone product. I believe it is far better for most users and therefore I will drop any tracking of the older version.

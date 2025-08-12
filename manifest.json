@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PDF Auto-Renamer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automatically rename PDF downloads with date format, clipboard content, and domain translation",
   "permissions": [
     "downloads",

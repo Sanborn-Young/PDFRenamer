@@ -1,60 +1,212 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="popup.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Extension Popup</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .toggle {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .toggle.active {
+            background-color: #4CAF50;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .toggle.active .toggle-slider {
+            transform: translateX(20px);
+        }
+        
+        .input-field, .dropdown, .button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+        
+        .date-input-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .date-input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            width: 150px;
+            box-sizing: border-box;
+        }
+        
+        .date-button {
+            width: 25px;
+            height: 34px;
+            padding: 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .date-button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .button {
+            background-color: #f0f0f0;
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid #ccc;
+        }
+        
+        .button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .display-field {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            border-radius: 4px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+        
+        .status-text {
+            color: #666;
+            font-style: italic;
+            margin-left: 10px;
+        }
+        
+        .download-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 10px;
+        }
+        
+        .download-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>PDF Auto-Renamer</h1>
-    
-    <div class="section">
-      <h3>Settings</h3>
-      
-      <div class="setting">
-        <label>
-          <input type="checkbox" id="enableExtension" checked>
-          Enable automatic PDF renaming
-        </label>
-      </div>
+    <div class="container">
+        <!-- Toggle for Auto PDF Renaming -->
+        <div class="row">
+            <div class="toggle-container">
+                <div class="toggle" id="autoToggle">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span>Enable Auto PDF Renaming</span>
+            </div>
+        </div>
+        
+        <!-- Status Text -->
+        <div class="row">
+            <span class="status-text" id="statusText">Extension Disabled</span>
+        </div>
+        
+        <!-- Date Input Field with +/- buttons -->
+        <div class="row">
+            <div class="date-input-container">
+                <input type="text" class="date-input" placeholder="Set Date Field" id="dateInput">
+                <button class="date-button" id="decreaseDate">-</button>
+                <button class="date-button" id="increaseDate">+</button>
+            </div>
+        </div>
+        
+        <!-- Lock Date Button -->
+        <div class="row">
+            <button class="button" id="lockDateBtn">Press To Lock In Date</button>
+        </div>
+        
+        <!-- Date Format -->
+        <div class="row">
+            <span>Date Format: 6 or 8 toggle below</span>
+        </div>
+        
+        <!-- Date Format Dropdown -->
+        <div class="row">
+            <select class="dropdown" id="dateFormat">
+                <option value="YYYYMMDD">20250812 (8 digits)</option>
+                <option value="YYMMDD">250812 (6 digits)</option>
+            </select>
+        </div>
+        
+        <!-- Current Buffer Input -->
+        <div class="row">
+            <input type="text" class="input-field" placeholder="Current Buffer for Name" id="bufferInput">
+        </div>
+        
+        <!-- Dynamic Change Button -->
+        <div class="row">
+            <button class="button" id="changeBufferBtn">Press to load buffer</button>
+        </div>
+        
+        <!-- Current Total Name Display -->
+        <div class="row">
+            <div class="display-field" id="totalName">Current Total Name</div>
+        </div>
+        
+        <!-- Download Button -->
+        <div class="row">
+            <button class="button download-button" id="downloadBtn">Download Current Tab</button>
+        </div>
+    </div>
 
-      <!-- Clipboard capture button and status -->
-      <div class="setting">
-        <button id="fetchClipboard">Capture Clipboard for Next PDF</button>
-        <span id="clipboardStatus" style="margin-left:8px;color:green;"></span>
-      </div>
-      
-      <div class="setting">
-        <label for="dateFormat">Date Format:</label>
-        <select id="dateFormat">
-          <option value="YYMMDD">YYMMDD (251229)</option>
-          <option value="YYYYMMDD">YYYYMMDD (20251229)</option>
-          <option value="MMDDYY">MMDDYY (122925)</option>
-        </select>
-      </div>
-      
-      <div class="setting">
-        <label>
-          <input type="checkbox" id="useClipboard" checked>
-          Use clipboard content in filename
-        </label>
-      </div>
-    </div>
-    
-    <div class="section">
-      <h3>Preview</h3>
-      <div id="preview">251229_clipboard-content WEBSITE.pdf</div>
-    </div>
-    
-    <div class="section">
-      <button id="saveSettings">Save Settings</button>
-    </div>
-    
-    <div class="section">
-      <button id="downloadActiveTab">Download Current Tab Clipboard Name</button>
-    </div>
-  </div>
-  
-  <script src="popup.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>

@@ -32,9 +32,13 @@ The final thing is putting in the subdomain next to the website.   So if you dow
 
 ##### Problems With The Extension
 
-Because this attempts to grab all download, the extension shuts itself off in 60 minutes.  You need to enable it every session.  
+Under the extension detail you may get an error once in a while.  This is because you're trying to capture the window clipboard and then pass it around to various elements which are getting focused and unfocused, and sometimes something may not quite hook up perfectly. This is nothing to be alarmed about and chances are I have no idea if anybody else will ever use this so I'm not going to spend any more time writing robust air handling to catch something which is inconsequential. This is a live with it statement.
+
+Because this attempts to grab all download, the extension shuts itself off in 60 minutes.  You need to enable it every session.  There was a time when I was doing a massive download of PD FS and forgot it was turned on. I'm never going to have this extension so it runs all the time without user intervention.
 
 Also, this extension works best when a website opens up the PDF in a new windows, then then you can download the PDF once you see it.  You simply copy something from the PDF and hit the extension button.  Unfortunately, some websites simply start downloading PDFs.  Unfortunatley, the extension does not always handle this gracefully and you will need to try different things.  Generally, you'll want to copy something into your computer buffer, open the extension, set the date and file name, and then rather than hit the download button, you may be able to click on the file to get it to download with part of the new name.  
+
+Generally if you have a website where the file is going to automatically download the first time you click on hypertext link, what you will need to do is open up the extension set the date make sure that your clipboard is enabled inside of the pull down You may be able to leave it and actually click on the web page and it may put it in to the file name as it gets downloaded. Or perhaps it won't. I make no guarantees and you'll have to figure this out yourself.
 
 Future versions will look at potential to solve this.
 

@@ -8,13 +8,18 @@ Are you ever frustrated by the naming that you get when you download a PDF?
 
 Many websites will give you strange names, generic names, or names that are not descriptive.  Then you look at the file many months later and you ask yourself what in the world was this file about. About the best you can do is try to put them into a sub directory where maybe you do have something labeled correctly.
 
-This extension was made to try and help solve this issue. I also enforce a strong naming convention which I believe will simplify your life. Currently the extension is not set up to be general purpose but to specifically create a dense amount of information in your file name so that if you see it inside of your computer, you should have a good idea.  So see if the following is acceptable:
+This extension was made to try and help solve this issue. I also enforce a strong naming convention which I believe will simplify your life. Currently the extension is not set up to be general purpose but to specifically create a dense amount of information in your file name so that if you see it inside of your computer, you should have a good idea.  
+
 
 A file should have:
 
+
 a. A date on front of it that can be quickly sorted in a file system
+
 b. A section that describes what is in the file
+
 c. A section that shows where it was downloaded from
+
 
 #####  A date on front of it that can be quickly sorted in a file system
 

@@ -46,7 +46,7 @@ Now select the extension icon that you pinned to your browser bar.  You will get
 
 If you pin the extension to your browser bar, look for this icon.
 
-<img src="images/icon.png" alt="Menu" style="width:25%; height:auto;" />
+<img src="images/icon.png" alt="Menu" style="width:10%; height:auto;" />
 
 Here is the drop down menu:
 

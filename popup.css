@@ -2,76 +2,147 @@ body {
   width: 300px;
   padding: 0;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  background: #f0f0f0;
 }
 
 .container {
-  padding: 16px;
+  padding: 10px;
 }
 
-h1 {
-  font-size: 18px;
-  margin: 0 0 16px 0;
-  color: #333;
-  text-align: center;
+.toggle-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
-h3 {
-  font-size: 14px;
-  margin: 0 0 8px 0;
-  color: #555;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 4px;
+.toggle-switch {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.toggle-switch.active {
+  background-color: #4CAF50;
 }
 
-.section {
-  margin-bottom: 16px;
+.toggle-slider {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
 }
-
-.setting {
-  margin-bottom: 12px;
+.toggle-switch.active .toggle-slider {
+  transform: translateX(20px);
 }
 
 label {
-  display: block;
-  margin-bottom: 4px;
+  font-size: 12px;
+  color: #333;
+}
+
+.status {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+
+.date-section {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.date-section input {
+  width: 60px; /* narrower */
+  padding: 4px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  text-align: center;
+}
+
+.date-section button {
+  width: 48px;  /* wider buttons */
+  height: 24px; /* back to original height */
+  padding: 0;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 12px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-input[type="checkbox"] {
-  margin-right: 8px;
+#lockDateBtn {
+  width: auto;
+  padding: 4px 8px;
+  height: 24px;
+  flex: 1;
+  min-width: 120px;
 }
 
-select {
+.format-section {
+  margin-bottom: 8px;
+}
+
+.format-section label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+input[type="text"], select {
   width: 100%;
-  padding: 6px;
+  padding: 4px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-#preview {
-  background: #f5f5f5;
-  padding: 8px;
-  border-radius: 4px;
-  font-family: monospace;
   font-size: 12px;
-  color: #666;
-  word-break: break-all;
+  margin-bottom: 6px;
+  box-sizing: border-box;
 }
 
 button {
   width: 100%;
-  padding: 10px;
-  background: #4285f4;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  background: #e0e0e0;
+  font-size: 11px;
+  margin-bottom: 4px;
   cursor: pointer;
-  font-size: 14px;
+}
+button:hover {
+  background: #d0d0d0;
 }
 
-button:hover {
-  background: #3367d6;
+.download-btn {
+  background: #4CAF50;
+  color: white;
+  border: 1px solid #45a049;
+  padding: 8px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.download-btn:hover {
+  background: #45a049;
+}
+
+#totalName {
+  background: #f8f8f8;
+}
+
+#bufferInput {
+  background: #fff;
+}
+
+#changeBufferBtn {
+  background: #e0e0e0;
 }

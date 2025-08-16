@@ -119,3 +119,7 @@ This is set up as a developer Chrome extension. What this means is you need to d
 #### Fixes
 
 Note original version push to get hub had an issue where the pull down box for the extension had a non operational checkbox that would not turn off the extension when checked and saved. This has been fixed with the version here.
+
+#### Issues with extension
+
+Unfortunately, PDF embedding and download behavior varies widely across websites, and there is no universal standard. You will need to review your site’s implementation to confirm that file retrieval works correctly. Different sites may yield inconsistent results. Although you can configure options via the dropdown menu, in many cases the actual PDF file is only downloaded by clicking the download button within the PDF viewer itself. Please test each affected site and document which ones succeed or fail in the GitHub issue tracker.
